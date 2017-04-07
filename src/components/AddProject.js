@@ -54,4 +54,10 @@ class AddProject extends Component {
   }
 }
 
+//prop validation
+AddProject.propTypes = {
+  category : React.PropTypes.array,
+  addProject: React.PropTypes.func
+}
+
 export default AddProject;

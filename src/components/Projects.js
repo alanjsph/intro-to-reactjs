@@ -24,4 +24,10 @@ class Projects extends Component {
   }
 }
 
+//prop validation
+Projects.propTypes = {
+  projects : React.PropTypes.array,
+  onDelete: React.PropTypes.func
+}
+
 export default Projects;
