@@ -8,7 +8,7 @@ class AddProject extends Component {
     }
   }
   static defaultProps = {
-    categories: ['Mobile', 'web', 'AI']
+    categories: ['Web design', 'Mobile development', 'Web development']
   }
   handleSubmit(e){
     //console.log(this.refs.title.value);
@@ -20,7 +20,8 @@ class AddProject extends Component {
         title: this.refs.title.value,
         category : this.refs.category.value
       }}, function(){
-        console.log(this.state);
+        //console.log(this.state);
+        this.props.addProject(this.state.newProject);
       });
     }
     e.preventDefault();
@@ -43,6 +44,7 @@ class AddProject extends Component {
                   {categoryOptions}
                 </select>
             </div>
+            <br />
             <input type="submit" value="Submit" />
          </form>
       </div>

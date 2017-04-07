@@ -26,10 +26,16 @@ class App extends Component {
       }
     ]});
   }
+
+  handleAddProject(project){
+    let currentProjects = this.state.projects;
+    currentProjects.push(project);
+    this.setState({projects:currentProjects});
+  }
   render() {
     return (
       <div className="App">
-       <AddProject />
+       <AddProject addProject={this.handleAddProject.bind(this)}/>
        <Projects projects={this.state.projects}/>
       </div>
     );
