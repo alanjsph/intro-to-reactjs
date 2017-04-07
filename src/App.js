@@ -36,11 +36,14 @@ class App extends Component {
     currentProjects.push(project);
     this.setState({projects:currentProjects});
   }
+  handleDeleteProject(id){
+    console.log(id);
+  }
   render() {
     return (
       <div className="App">
        <AddProject addProject={this.handleAddProject.bind(this)}/>
-       <Projects projects={this.state.projects}/>
+       <Projects onDelete={this.handleDeleteProject.bind(this)}projects={this.state.projects}/>
       </div>
     );
   }
