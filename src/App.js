@@ -37,7 +37,11 @@ class App extends Component {
     this.setState({projects:currentProjects});
   }
   handleDeleteProject(id){
-    console.log(id);
+    console.log(id + " deleted!");
+    let currentProjects = this.state.projects;
+    let index = currentProjects.findIndex(x => x.id === id);
+    currentProjects.splice(index, 1);
+    this.setState({projects: currentProjects});
   }
   render() {
     return (
